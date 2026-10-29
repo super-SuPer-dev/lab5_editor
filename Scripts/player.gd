@@ -1,0 +1,198 @@
+# ----------------------------------------------------------------------------------- #
+# -------------- FEEL FREE TO USE IN ANY PROJECT, COMMERCIAL OR NON-COMMERCIAL ------ #
+# ---------------------- 3D PLATFORMER CONTROLLER BY SD STUDIOS --------------------- #
+# ---------------------------- ATTRIBUTION NOT REQUIRED ----------------------------- #
+# ----------------------------------------------------------------------------------- #
+# Lab 5: model swapped from Gobot to Cactoro (Poly Pizza), animations remapped to the
+# kit's names (Idle / Run / Jump / Flip) in Assets/Animations/cactoro_anims.tres,
+# plus hearts, knockback, checkpoints and a victory pose.
+
+extends CharacterBody3D
+
+# ---------- VARIABLES ---------- #
+
+@export_category("Player Properties")
+@export var move_speed : float = 7
+@export var jump_force : float = 7.5
+@export var follow_lerp_factor : float = 4
+@export var jump_limit : int = 2
+@export var knockback_force : float = 9
+@export var invincible_time : float = 1.5
+
+@export_group("Game Juice")
+@export var jumpStretchSize := Vector3(0.8, 1.2, 0.8)
+
+# Booleans
+var is_grounded = false
+var can_double_jump = false
+var is_flipping = false
+var controls_locked = false
+
+var invincible_timer := 0.0
+var anim_lock_timer := 0.0
+var knockback := Vector3.ZERO
+
+# Onready Variables
+@onready var model = $Model
+@onready var animation = $AnimationPlayer
+@onready var spring_arm = %Gimbal
+
+@onready var particle_trail = $ParticleTrail
+@onready var footsteps = $Footsteps
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 2
+
+# ---------- FUNCTIONS ---------- #
+
+func _ready():
+	spring_arm.position = position
+
+func _process(delta):
+	invincible_timer = max(invincible_timer - delta, 0.0)
+	anim_lock_timer = max(anim_lock_timer - delta, 0.0)
+	# Blink while invincible
+	model.visible = invincible_timer <= 0.0 or int(invincible_timer * 12) % 2 == 0
+
+	player_animations()
+	get_input(delta)
+
+	# Smoothly follow player's position
+	spring_arm.position = lerp(spring_arm.position, position, delta * follow_lerp_factor)
+
+	# Player Rotation
+	if is_moving() and not controls_locked:
+		var look_direction = Vector2(velocity.z, velocity.x)
+		model.rotation.y = lerp_angle(model.rotation.y, look_direction.angle(), delta * 12)
+		if spring_arm.auto_rotate:
+			spring_arm.rotation.y = lerp_angle(spring_arm.rotation.y, look_direction.angle()-deg_to_rad(180), delta*0.4)
+			spring_arm.rotation.x = lerp_angle(spring_arm.rotation.x, deg_to_rad(-12), delta*0.4)
+
+	# Check if player is grounded or not
+	is_grounded = true if is_on_floor() else false
+
+	# Handle Jumping
+	if is_grounded:
+		can_double_jump = true
+
+	if Input.is_action_just_pressed("jump") and not controls_locked:
+		if is_on_floor():
+			perform_jump()
+		elif can_double_jump:
+			if is_moving():
+				perform_flip_jump()
+
+	velocity.y -= gravity * delta
+
+func perform_jump():
+	AudioManager.jump_sfx.play()
+	AudioManager.jump_sfx.pitch_scale = 1.12
+
+	jumpTween()
+	animation.play("Jump")
+	velocity.y = jump_force
+
+func perform_flip_jump():
+	AudioManager.jump_sfx.play()
+	AudioManager.jump_sfx.pitch_scale = 0.8
+	can_double_jump = false
+	is_flipping = true
+	animation.play("Flip", -1, 1.6)
+	velocity.y = jump_force
+	await get_tree().create_timer(animation.get_animation("Flip").length / 1.6).timeout
+	is_flipping = false
+	if not is_on_floor():
+		animation.play("Jump", 0.3)
+
+func is_moving():
+	return abs(velocity.z) > 0 || abs(velocity.x) > 0
+
+func jumpTween():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "scale", jumpStretchSize, 0.1)
+	tween.tween_property(self, "scale", Vector3(1,1,1), 0.1)
+
+# Get Player Input
+func get_input(delta):
+	var move_direction := Vector3.ZERO
+	if not controls_locked:
+		move_direction.x = Input.get_axis("move_left", "move_right")
+		move_direction.z = Input.get_axis("move_forward", "move_back")
+
+	# Move The player Towards Spring Arm/Camera Rotation
+	move_direction = move_direction.rotated(Vector3.UP, spring_arm.rotation.y).normalized()
+	velocity = Vector3(move_direction.x * move_speed, velocity.y, move_direction.z * move_speed)
+
+	# Knockback from traps fades out quickly
+	velocity += knockback
+	knockback = knockback.lerp(Vector3.ZERO, delta * 5)
+
+	move_and_slide()
+
+# Handle Player Animations
+func player_animations():
+	particle_trail.emitting = false
+	footsteps.stream_paused = true
+
+	if anim_lock_timer > 0.0 or is_flipping or controls_locked:
+		return
+
+	if is_on_floor():
+		if is_moving(): # Checks if player is moving
+			animation.play("Run", 0.3)
+			particle_trail.emitting = true
+			footsteps.stream_paused = false
+		else:
+			animation.play("Idle", 0.3)
+	elif animation.current_animation != "Jump":
+		animation.play("Fall", 0.3)
+
+# ---------- DAMAGE / RESPAWN ---------- #
+
+# Called by traps (Hazard.gd)
+func take_damage(from_position: Vector3):
+	if invincible_timer > 0.0 or controls_locked:
+		return
+	AudioManager.hurt_sfx.play()
+	var away := global_position - from_position
+	away.y = 0
+	if away.length() < 0.1:
+		away = -model.global_transform.basis.z
+	knockback = away.normalized() * knockback_force
+	velocity.y = jump_force * 0.7
+	invincible_timer = invincible_time
+	anim_lock_timer = 0.5
+	is_flipping = false
+	animation.play("Hurt", 0.1)
+	if not GameManager.lose_heart():
+		die()
+
+# Called by DeadZone.gd when falling into sand / lava
+func fall_out():
+	if controls_locked:
+		return
+	AudioManager.fall_sfx.play()
+	if GameManager.lose_heart():
+		respawn()
+	else:
+		die()
+
+func respawn():
+	global_position = GameManager.checkpoint
+	velocity = Vector3.ZERO
+	knockback = Vector3.ZERO
+	spring_arm.position = position
+	invincible_timer = invincible_time
+
+func die():
+	controls_locked = true
+	animation.play("Death", 0.1)
+	GameManager.message.emit("หัวใจหมดแล้ว! เริ่มด่านใหม่...")
+	await get_tree().create_timer(1.8).timeout
+	GameManager.restart_level()
+
+# Called by Door.gd when entering the open door
+func celebrate():
+	controls_locked = true
+	velocity = Vector3.ZERO
+	animation.play("Victory", 0.2)
