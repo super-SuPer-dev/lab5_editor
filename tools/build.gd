@@ -839,6 +839,7 @@ func label3d(text: String, pos: Vector3, size := 72, rot_y := 0.0, color := Colo
 	l.position = pos
 	l.rotation_degrees.y = rot_y
 	l.pixel_size = 0.008
+	l.name = "Sign%d" % (grp("Signs").get_child_count() + 1)
 	grp("Signs").add_child(l)
 
 func gem(pos: Vector3):

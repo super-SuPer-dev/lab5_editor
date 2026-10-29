@@ -35,25 +35,25 @@ size = Vector2(0.15, 0.15)
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[node name="Checkpoint" type="Area3D" unique_id=116663873]
+[node name="Checkpoint" type="Area3D" unique_id=15633028]
 script = ExtResource("1_u2dfq")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=464007827]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=295713323]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_i43yy")
 
-[node name="Base" type="MeshInstance3D" parent="." unique_id=552658429]
+[node name="Base" type="MeshInstance3D" parent="." unique_id=680420863]
 mesh = SubResource("ArrayMesh_tjv4q")
 
 [node name="Flag" type="Node3D" parent="." unique_id=1687216598 instance=ExtResource("3_aby1t")]
 transform = Transform3D(2.1052632, 0, 0, 0, 2.1052632, 0, 0, 0, 2.1052632, 0, 0.1, 0)
 
-[node name="Light" type="OmniLight3D" parent="." unique_id=2093739903]
+[node name="Light" type="OmniLight3D" parent="." unique_id=1857248608]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.6)
 light_color = Color(0.5, 1, 0.55, 1)
 light_energy = 1.4
 
-[node name="Burst" type="CPUParticles3D" parent="." unique_id=2065232965]
+[node name="Burst" type="CPUParticles3D" parent="." unique_id=417858872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 emitting = false
 amount = 30

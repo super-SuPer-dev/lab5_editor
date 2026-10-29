@@ -18,18 +18,18 @@ size = Vector2(0.15, 0.15)
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[node name="Torch" type="Node3D" unique_id=294276484]
+[node name="Torch" type="Node3D" unique_id=1203351521]
 
 [node name="TorchModel" type="Node3D" parent="." unique_id=1917858 instance=ExtResource("1_8ekt7")]
 transform = Transform3D(1.6512433, 0, 0, 0, 1.6512433, 0, 0, 0, 1.6512433, 0, 0, 0)
 
-[node name="Light" type="OmniLight3D" parent="." unique_id=1567781674]
+[node name="Light" type="OmniLight3D" parent="." unique_id=1778791113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
 light_color = Color(1, 0.55, 0.2, 1)
 light_energy = 1.6
 omni_range = 7.0
 
-[node name="Flame" type="CPUParticles3D" parent="." unique_id=1413925128]
+[node name="Flame" type="CPUParticles3D" parent="." unique_id=232694505]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95, 0)
 amount = 12
 lifetime = 0.7

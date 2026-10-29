@@ -278,46 +278,46 @@ shadow_size = 4
 shadow_color = Color(0, 0, 0, 0.35)
 shadow_offset = Vector2(2, 3)
 
-[node name="Title" type="Node3D" unique_id=128863177]
+[node name="Title" type="Node3D" unique_id=514191223]
 
-[node name="Environment" type="Node3D" parent="." unique_id=415272761]
+[node name="Environment" type="Node3D" parent="." unique_id=2135755490]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=2056250045]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=548333504]
 environment = SubResource("Environment_kl5yw")
 
-[node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=1759918186]
+[node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=295220854]
 transform = Transform3D(0.49999997, 0.4967318, -0.70940655, 0, 0.81915206, 0.57357645, 0.86602545, -0.2867882, 0.409576, 0, 0, 0)
 light_color = Color(1, 0.9, 0.75, 1)
 shadow_enabled = true
 directional_shadow_max_distance = 70.0
 
-[node name="Platforms" type="Node3D" parent="." unique_id=943399272]
+[node name="Platforms" type="Node3D" parent="." unique_id=758339803]
 
-[node name="Island" type="StaticBody3D" parent="Platforms" unique_id=1458155505]
+[node name="Island" type="StaticBody3D" parent="Platforms" unique_id=972759337]
 
-[node name="Mesh" type="MeshInstance3D" parent="Platforms/Island" unique_id=534830116]
+[node name="Mesh" type="MeshInstance3D" parent="Platforms/Island" unique_id=1951160742]
 mesh = SubResource("ArrayMesh_umpsy")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Island" unique_id=633616318]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Island" unique_id=1853197187]
 shape = SubResource("ConvexPolygonShape3D_k67d4")
 
-[node name="Player" type="Node3D" parent="." unique_id=1370431476]
+[node name="Player" type="Node3D" parent="." unique_id=1549321588]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 0, 0, 0)
 
 [node name="Model" type="Node3D" parent="Player" unique_id=1293588333 instance=ExtResource("2_178wh")]
 transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, 0, 0, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=1000626545]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=684191167]
 root_node = NodePath("../Model")
 libraries/ = ExtResource("3_sydhl")
 autoplay = &"Idle"
 
-[node name="Decorations" type="Node3D" parent="." unique_id=772849449]
+[node name="Decorations" type="Node3D" parent="." unique_id=842600270]
 
 [node name="PalmTree" type="Node3D" parent="Decorations" unique_id=1878234368 instance=ExtResource("4_edfne")]
 transform = Transform3D(-1.3191668, 0, 0.67933965, 0, 1.4838138, 0, -0.67933965, 0, -1.3191668, -3.2, 0, -2.2)
 
-[node name="@Node3D@68" type="Node3D" parent="Decorations" unique_id=282746182 instance=ExtResource("4_edfne")]
+[node name="@Node3D@61" type="Node3D" parent="Decorations" unique_id=56102681 instance=ExtResource("4_edfne")]
 transform = Transform3D(-0.38858214, 0, -1.3696895, 0, 1.4237434, 0, 1.3696895, 0, -0.38858214, 3.4, 0, -3)
 
 [node name="CactusFlowers" type="Node3D" parent="Decorations" unique_id=2074165865 instance=ExtResource("5_dvr26")]
@@ -332,63 +332,63 @@ transform = Transform3D(0.88700515, 0, 0, 0, 0.88700515, 0, 0, 0, 0.88700515, 0.
 [node name="GemPink" type="Node3D" parent="Decorations" unique_id=1013829504 instance=ExtResource("8_jdpg1")]
 transform = Transform3D(0.9653473, 0, 0, 0, 0.9653473, 0, 0, 0, 0.9653473, -1.3096923, 1.7182541, -1.8084931)
 
-[node name="@Node3D@69" type="Node3D" parent="Decorations" unique_id=940356612 instance=ExtResource("7_n5r2y")]
+[node name="@Node3D@62" type="Node3D" parent="Decorations" unique_id=577896922 instance=ExtResource("7_n5r2y")]
 transform = Transform3D(0.88700515, 0, 0, 0, 0.88700515, 0, 0, 0, 0.88700515, -2.1844447, 1.1351191, -1.0689834)
 
-[node name="@Node3D@70" type="Node3D" parent="Decorations" unique_id=1149332570 instance=ExtResource("8_jdpg1")]
+[node name="@Node3D@63" type="Node3D" parent="Decorations" unique_id=1505316899 instance=ExtResource("8_jdpg1")]
 transform = Transform3D(0.9653473, 0, 0, 0, 0.9653473, 0, 0, 0, 0.9653473, -2.1729133, 1.3022046, -0.10890348)
 
-[node name="@Node3D@71" type="Node3D" parent="Decorations" unique_id=1772386251 instance=ExtResource("7_n5r2y")]
+[node name="@Node3D@64" type="Node3D" parent="Decorations" unique_id=1098413385 instance=ExtResource("7_n5r2y")]
 transform = Transform3D(0.88700515, 0, 0, 0, 0.88700515, 0, 0, 0, 0.88700515, -1.2805216, 1.7462754, 0.62020606)
 
-[node name="Background" type="Node3D" parent="." unique_id=566246223]
+[node name="Background" type="Node3D" parent="." unique_id=2055481515]
 
-[node name="SandDunes" type="MeshInstance3D" parent="Background" unique_id=1156934818]
+[node name="SandDunes" type="MeshInstance3D" parent="Background" unique_id=1580453325]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14, 0)
 mesh = SubResource("ArrayMesh_86yde")
 
-[node name="Butte0" type="MeshInstance3D" parent="Background" unique_id=1666913503]
+[node name="Butte0" type="MeshInstance3D" parent="Background" unique_id=1963804348]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.42692, 13.944977, 23.641617)
 mesh = SubResource("ArrayMesh_1f3as")
 
-[node name="Butte1" type="MeshInstance3D" parent="Background" unique_id=928036390]
+[node name="Butte1" type="MeshInstance3D" parent="Background" unique_id=527035705]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.324844, 8.988716, 70.75914)
 mesh = SubResource("ArrayMesh_3f7pq")
 
-[node name="Butte2" type="MeshInstance3D" parent="Background" unique_id=413984343]
+[node name="Butte2" type="MeshInstance3D" parent="Background" unique_id=1370342038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.641617, 2.1833115, 76.42692)
 mesh = SubResource("ArrayMesh_qqea4")
 
-[node name="Butte3" type="MeshInstance3D" parent="Background" unique_id=206865790]
+[node name="Butte3" type="MeshInstance3D" parent="Background" unique_id=149614449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.75914, 14.91423, 37.324844)
 mesh = SubResource("ArrayMesh_v38kr")
 
-[node name="Butte4" type="MeshInstance3D" parent="Background" unique_id=1507276708]
+[node name="Butte4" type="MeshInstance3D" parent="Background" unique_id=1636664299]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.42692, 5.804161, -23.641617)
 mesh = SubResource("ArrayMesh_epwgf")
 
-[node name="Butte5" type="MeshInstance3D" parent="Background" unique_id=1466119791]
+[node name="Butte5" type="MeshInstance3D" parent="Background" unique_id=399383378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.324844, 14.048708, -70.75914)
 mesh = SubResource("ArrayMesh_rbl3b")
 
-[node name="Butte6" type="MeshInstance3D" parent="Background" unique_id=287705734]
+[node name="Butte6" type="MeshInstance3D" parent="Background" unique_id=271281627]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.641617, 5.2865925, -76.42692)
 mesh = SubResource("ArrayMesh_bpv6u")
 
-[node name="Butte7" type="MeshInstance3D" parent="Background" unique_id=61905681]
+[node name="Butte7" type="MeshInstance3D" parent="Background" unique_id=1312814071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.75914, 9.488976, -37.324844)
 mesh = SubResource("ArrayMesh_md08x")
 
-[node name="CameraRig" type="Node3D" parent="." unique_id=690594273]
+[node name="CameraRig" type="Node3D" parent="." unique_id=870278067]
 script = ExtResource("9_t0ka2")
 
-[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1744489333]
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=384643833]
 transform = Transform3D(1, 0, 0, 0, 0.98861885, 0.150442, 0, -0.150442, 0.98861885, 1.9, 1.75, 4.6)
 fov = 55.0
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=466576130]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1685640669]
 
-[node name="Menu" type="Control" parent="UI" unique_id=378774615]
+[node name="Menu" type="Control" parent="UI" unique_id=163248078]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -396,7 +396,7 @@ anchor_bottom = 1.0
 theme = SubResource("Theme_x5qnw")
 script = ExtResource("11_fkobf")
 
-[node name="Panel" type="PanelContainer" parent="UI/Menu" unique_id=563603451]
+[node name="Panel" type="PanelContainer" parent="UI/Menu" unique_id=1912968694]
 layout_mode = 0
 anchor_left = 1.0
 anchor_top = 0.5
@@ -407,23 +407,23 @@ offset_top = -270.0
 offset_right = -60.0
 offset_bottom = 270.0
 
-[node name="VBox" type="VBoxContainer" parent="UI/Menu/Panel" unique_id=1133714065]
+[node name="VBox" type="VBoxContainer" parent="UI/Menu/Panel" unique_id=1895852909]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Title" type="Label" parent="UI/Menu/Panel/VBox" unique_id=364562177]
+[node name="Title" type="Label" parent="UI/Menu/Panel/VBox" unique_id=475538751]
 layout_mode = 2
 text = "Cactoro"
 label_settings = SubResource("LabelSettings_4aie2")
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="UI/Menu/Panel/VBox" unique_id=1568865974]
+[node name="Subtitle" type="Label" parent="UI/Menu/Panel/VBox" unique_id=1895679865]
 layout_mode = 2
 text = "Oasis Quest  ·  ภารกิจตามหาโอเอซิส"
 label_settings = SubResource("LabelSettings_e1wik")
 horizontal_alignment = 1
 
-[node name="HowTo" type="Label" parent="UI/Menu/Panel/VBox" unique_id=1091363750]
+[node name="HowTo" type="Label" parent="UI/Menu/Panel/VBox" unique_id=172087601]
 layout_mode = 2
 text = "• เก็บคริสตัลให้ครบทุกชิ้น แล้วเข้าประตูไปด่านต่อไป
 • หลบหนาม ลูกตุ้ม และท่อนหนามหมุน มีหัวใจ 3 ดวง
@@ -432,11 +432,11 @@ text = "• เก็บคริสตัลให้ครบทุกชิ�
 label_settings = SubResource("LabelSettings_05bu0")
 autowrap_mode = 3
 
-[node name="StartButton" type="Button" parent="UI/Menu/Panel/VBox" unique_id=1451656383]
+[node name="StartButton" type="Button" parent="UI/Menu/Panel/VBox" unique_id=1272225405]
 layout_mode = 2
 text = "เริ่มเกม"
 
-[node name="Credits" type="Label" parent="UI/Menu/Panel/VBox" unique_id=1176764654]
+[node name="Credits" type="Label" parent="UI/Menu/Panel/VBox" unique_id=1392288610]
 layout_mode = 2
 text = "Lab 5 First 3D Game · Godot 4.7 · โมเดล Low-Poly จาก Poly Pizza (Quaternius, CC0)"
 label_settings = SubResource("LabelSettings_epcbg")
