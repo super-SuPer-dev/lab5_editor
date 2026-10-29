@@ -9,6 +9,9 @@ A 3D platformer made with **Godot 4.7** on top of the
 Help Cactoro the cactus bring water back to the desert: collect every crystal in the level,
 avoid the traps, then walk through the door to reach the next stage.
 
+![Level 1](docs/screenshots/play_level1.png)
+![Level 2](docs/screenshots/play_level2.png)
+
 ## Controls
 
 | Key | Action |
