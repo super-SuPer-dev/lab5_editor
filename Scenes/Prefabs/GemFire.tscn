@@ -25,16 +25,16 @@ point_count = 3
 [sub_resource type="SphereShape3D" id="SphereShape3D_cn1m1"]
 radius = 2.4
 
-[node name="Gem" type="Area3D" unique_id=1218992533]
+[node name="Gem" type="Area3D" unique_id=1518926239]
 script = ExtResource("1_1aiph")
 
 [node name="GemModel" type="Node3D" parent="." unique_id=1013829504 instance=ExtResource("2_g55n1")]
 transform = Transform3D(1.3101141, 0, 0, 0, 1.3101141, 0, 0, 0, 1.3101141, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=299123814]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1676769998]
 shape = SubResource("SphereShape3D_dj6y8")
 
-[node name="Sparkles" type="CPUParticles3D" parent="." unique_id=1810361250]
+[node name="Sparkles" type="CPUParticles3D" parent="." unique_id=1701735322]
 amount = 10
 mesh = SubResource("QuadMesh_x546c")
 emission_shape = 1
@@ -44,7 +44,7 @@ initial_velocity_max = 0.4
 scale_amount_curve = SubResource("Curve_f702d")
 color = Color(1, 0.55, 0.7, 1)
 
-[node name="Range" type="Area3D" parent="." unique_id=1875198879]
+[node name="Range" type="Area3D" parent="." unique_id=629553019]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Range" unique_id=1910310081]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Range" unique_id=430294703]
 shape = SubResource("SphereShape3D_cn1m1")

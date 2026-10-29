@@ -319,6 +319,11 @@ func build_player():
 	for n in ["Gimbal", "ParticleTrail", "Footsteps"]:
 		var d: Node = old.get_node(n).duplicate()
 		p.add_child(d)
+	var steps: AudioStreamPlayer3D = p.get_node("Footsteps")
+	steps.stream = load("res://Assets/Audio/SFX/footstep_a.wav")
+	steps.autoplay = false
+	steps.pitch_scale = 1.0
+	steps.volume_db = -8.0
 	var gimbal: Node3D = p.get_node("Gimbal")
 	gimbal.unique_name_in_owner = true
 	gimbal.position = Vector3(0, 1, 0)

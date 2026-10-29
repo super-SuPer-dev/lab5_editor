@@ -18,12 +18,12 @@ _surfaces = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_pla6q"]
 size = Vector3(3.2, 0.5, 3)
 
-[node name="MovingPlatform" type="AnimatableBody3D" unique_id=1611344090]
+[node name="MovingPlatform" type="AnimatableBody3D" unique_id=1784789768]
 script = ExtResource("1_kagyj")
 
-[node name="Mesh" type="MeshInstance3D" parent="." unique_id=401767732]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=310267064]
 mesh = SubResource("ArrayMesh_iubn0")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1293882499]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=155702003]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 shape = SubResource("BoxShape3D_pla6q")

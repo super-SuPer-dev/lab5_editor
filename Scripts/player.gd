@@ -18,6 +18,7 @@ extends CharacterBody3D
 @export var jump_limit : int = 2
 @export var knockback_force : float = 9
 @export var invincible_time : float = 1.5
+@export var step_interval : float = 0.32
 
 @export_group("Game Juice")
 @export var jumpStretchSize := Vector3(0.8, 1.2, 0.8)
@@ -31,6 +32,11 @@ var controls_locked = false
 var invincible_timer := 0.0
 var anim_lock_timer := 0.0
 var knockback := Vector3.ZERO
+var step_timer := 0.0
+var step_index := 0
+
+# Single footstep sounds played in rhythm (left/right) instead of the looping walk sound
+const STEP_SOUNDS := [preload("res://Assets/Audio/SFX/footstep_a.wav"), preload("res://Assets/Audio/SFX/footstep_b.wav")]
 
 # Onready Variables
 @onready var model = $Model
@@ -55,6 +61,7 @@ func _process(delta):
 	model.visible = invincible_timer <= 0.0 or int(invincible_timer * 12) % 2 == 0
 
 	player_animations()
+	play_footsteps(delta)
 	get_input(delta)
 
 	# Smoothly follow player's position
@@ -132,7 +139,6 @@ func get_input(delta):
 # Handle Player Animations
 func player_animations():
 	particle_trail.emitting = false
-	footsteps.stream_paused = true
 
 	if anim_lock_timer > 0.0 or is_flipping or controls_locked:
 		return
@@ -141,11 +147,23 @@ func player_animations():
 		if is_moving(): # Checks if player is moving
 			animation.play("Run", 0.3)
 			particle_trail.emitting = true
-			footsteps.stream_paused = false
 		else:
 			animation.play("Idle", 0.3)
 	elif animation.current_animation != "Jump":
 		animation.play("Fall", 0.3)
+
+# Play one step every step_interval while running on the ground
+func play_footsteps(delta):
+	if not is_on_floor() or not is_moving() or controls_locked:
+		step_timer = 0.0
+		return
+	step_timer -= delta
+	if step_timer <= 0.0:
+		step_timer = step_interval
+		footsteps.stream = STEP_SOUNDS[step_index % 2]
+		footsteps.pitch_scale = randf_range(0.92, 1.08)
+		footsteps.play()
+		step_index += 1
 
 # ---------- DAMAGE / RESPAWN ---------- #
 
