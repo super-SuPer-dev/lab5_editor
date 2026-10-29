@@ -298,7 +298,7 @@ func cactoro_with_anims(root: Node3D, autoplay := "Idle"):
 # ============================================================ prefabs
 
 func build_player():
-	# Camera rig / trail / footsteps were taken from the kit player (Gobot); later rebuilds reuse them from player.tscn
+	# Camera rig / dust trail were taken from the kit player (Gobot); later rebuilds reuse them from player.tscn
 	var src := "res://Scenes/_kit_player.tscn" if FileAccess.file_exists("res://Scenes/_kit_player.tscn") else "res://Scenes/player.tscn"
 	var old: Node = load(src).instantiate()
 	var p := CharacterBody3D.new()
@@ -316,14 +316,9 @@ func build_player():
 	cactoro_with_anims(p)
 	(p.get_node("Model") as Node3D).rotation_degrees.y = 180
 	# Camera rig, dust trail and footsteps come straight from the starter kit
-	for n in ["Gimbal", "ParticleTrail", "Footsteps"]:
+	for n in ["Gimbal", "ParticleTrail"]:
 		var d: Node = old.get_node(n).duplicate()
 		p.add_child(d)
-	var steps: AudioStreamPlayer3D = p.get_node("Footsteps")
-	steps.stream = load("res://Assets/Audio/SFX/footstep_a.wav")
-	steps.autoplay = false
-	steps.pitch_scale = 1.0
-	steps.volume_db = -8.0
 	var gimbal: Node3D = p.get_node("Gimbal")
 	gimbal.unique_name_in_owner = true
 	gimbal.position = Vector3(0, 1, 0)

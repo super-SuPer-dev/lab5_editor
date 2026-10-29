@@ -32,26 +32,26 @@ radial_segments = 6
 [sub_resource type="SphereShape3D" id="SphereShape3D_dw0i6"]
 radius = 0.65
 
-[node name="Pendulum" type="Node3D" unique_id=117789023]
+[node name="Pendulum" type="Node3D" unique_id=2032980932]
 script = ExtResource("1_hp3jd")
 
-[node name="Anchor" type="MeshInstance3D" parent="." unique_id=108824997]
+[node name="Anchor" type="MeshInstance3D" parent="." unique_id=818048453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0)
 mesh = SubResource("ArrayMesh_36fdi")
 
-[node name="Pivot" type="Node3D" parent="." unique_id=1124705908]
+[node name="Pivot" type="Node3D" parent="." unique_id=1792952942]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2, 0)
 
-[node name="Chain" type="MeshInstance3D" parent="Pivot" unique_id=441264801]
+[node name="Chain" type="MeshInstance3D" parent="Pivot" unique_id=1207559688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.6, 0)
 mesh = SubResource("CylinderMesh_jjlu8")
 
 [node name="SpikyBall" type="Node3D" parent="Pivot" unique_id=617975652 instance=ExtResource("3_5cpyu")]
 transform = Transform3D(1.1760706, 0, 0, 0, 1.1760706, 0, 0, 0, 1.1760706, 0, -5.3, 0)
 
-[node name="Hazard" type="Area3D" parent="Pivot" unique_id=1649439969]
+[node name="Hazard" type="Area3D" parent="Pivot" unique_id=961985181]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.3, 0)
 script = ExtResource("4_qjk5t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Hazard" unique_id=1373335995]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Hazard" unique_id=1794098939]
 shape = SubResource("SphereShape3D_dw0i6")

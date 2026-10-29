@@ -35,16 +35,12 @@ var knockback := Vector3.ZERO
 var step_timer := 0.0
 var step_index := 0
 
-# Single footstep sounds played in rhythm (left/right) instead of the looping walk sound
-const STEP_SOUNDS := [preload("res://Assets/Audio/SFX/footstep_a.wav"), preload("res://Assets/Audio/SFX/footstep_b.wav")]
-
 # Onready Variables
 @onready var model = $Model
 @onready var animation = $AnimationPlayer
 @onready var spring_arm = %Gimbal
 
 @onready var particle_trail = $ParticleTrail
-@onready var footsteps = $Footsteps
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 2
@@ -160,9 +156,10 @@ func play_footsteps(delta):
 	step_timer -= delta
 	if step_timer <= 0.0:
 		step_timer = step_interval
-		footsteps.stream = STEP_SOUNDS[step_index % 2]
-		footsteps.pitch_scale = randf_range(0.92, 1.08)
-		footsteps.play()
+		# Non-positional players in AudioManager, one per foot (3D players fade/stutter on the web)
+		var step = AudioManager.step_sfx[step_index % 2]
+		step.pitch_scale = randf_range(0.92, 1.08)
+		step.play()
 		step_index += 1
 
 # ---------- DAMAGE / RESPAWN ---------- #

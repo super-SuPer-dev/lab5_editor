@@ -14,3 +14,4 @@ extends Node
 @onready var portal_sfx = $PortalSfx
 @onready var win_sfx = $WinSfx
 @onready var click_sfx = $ClickSfx
+@onready var step_sfx = [$StepLeftSfx, $StepRightSfx]

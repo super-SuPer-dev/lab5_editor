@@ -283,46 +283,46 @@ shadow_size = 4
 shadow_color = Color(0, 0, 0, 0.35)
 shadow_offset = Vector2(2, 3)
 
-[node name="Win" type="Node3D" unique_id=985631336]
+[node name="Win" type="Node3D" unique_id=1440768989]
 
-[node name="Environment" type="Node3D" parent="." unique_id=1632421245]
+[node name="Environment" type="Node3D" parent="." unique_id=974027866]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1059988046]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1768073320]
 environment = SubResource("Environment_7ei2j")
 
-[node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=171477912]
+[node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=1141039132]
 transform = Transform3D(0.49999997, 0.4967318, -0.70940655, 0, 0.81915206, 0.57357645, 0.86602545, -0.2867882, 0.409576, 0, 0, 0)
 light_color = Color(1, 0.9, 0.75, 1)
 shadow_enabled = true
 directional_shadow_max_distance = 70.0
 
-[node name="Platforms" type="Node3D" parent="." unique_id=1687037961]
+[node name="Platforms" type="Node3D" parent="." unique_id=1790987620]
 
-[node name="Island" type="StaticBody3D" parent="Platforms" unique_id=543404165]
+[node name="Island" type="StaticBody3D" parent="Platforms" unique_id=1903248824]
 
-[node name="Mesh" type="MeshInstance3D" parent="Platforms/Island" unique_id=1692842912]
+[node name="Mesh" type="MeshInstance3D" parent="Platforms/Island" unique_id=1369083620]
 mesh = SubResource("ArrayMesh_m3rwx")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Island" unique_id=1800978769]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Island" unique_id=954948360]
 shape = SubResource("ConvexPolygonShape3D_lcjsq")
 
-[node name="Player" type="Node3D" parent="." unique_id=1774967900]
+[node name="Player" type="Node3D" parent="." unique_id=2083645084]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 0, 0, 0)
 
 [node name="Model" type="Node3D" parent="Player" unique_id=1293588333 instance=ExtResource("2_g1tew")]
 transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, 0, 0, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=2003572439]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=1127951198]
 root_node = NodePath("../Model")
 libraries/ = ExtResource("3_3hgib")
 autoplay = &"Victory"
 
-[node name="Decorations" type="Node3D" parent="." unique_id=656410048]
+[node name="Decorations" type="Node3D" parent="." unique_id=754813231]
 
 [node name="PalmTree" type="Node3D" parent="Decorations" unique_id=1878234368 instance=ExtResource("4_vtce2")]
 transform = Transform3D(1.4882089, 0, 0.9343467, 0, 1.757205, 0, -0.9343467, 0, 1.4882089, -3.2, 0, -2.2)
 
-[node name="@Node3D@65" type="Node3D" parent="Decorations" unique_id=1689040305 instance=ExtResource("4_vtce2")]
+[node name="@Node3D@65" type="Node3D" parent="Decorations" unique_id=2077761073 instance=ExtResource("4_vtce2")]
 transform = Transform3D(0.48361877, 0, 1.1634852, 0, 1.259994, 0, -1.1634852, 0, 0.48361877, 3.4, 0, -3)
 
 [node name="CactusFlowers" type="Node3D" parent="Decorations" unique_id=2074165865 instance=ExtResource("5_u8nq8")]
@@ -337,68 +337,68 @@ transform = Transform3D(0.88700515, 0, 0, 0, 0.88700515, 0, 0, 0, 0.88700515, 0.
 [node name="GemPink" type="Node3D" parent="Decorations" unique_id=1013829504 instance=ExtResource("8_fs0g5")]
 transform = Transform3D(0.9653473, 0, 0, 0, 0.9653473, 0, 0, 0, 0.9653473, -1.3096923, 1.7182541, -1.8084931)
 
-[node name="@Node3D@66" type="Node3D" parent="Decorations" unique_id=1706713343 instance=ExtResource("7_r5c7d")]
+[node name="@Node3D@66" type="Node3D" parent="Decorations" unique_id=149171269 instance=ExtResource("7_r5c7d")]
 transform = Transform3D(0.88700515, 0, 0, 0, 0.88700515, 0, 0, 0, 0.88700515, -2.1844447, 1.1351191, -1.0689834)
 
-[node name="@Node3D@67" type="Node3D" parent="Decorations" unique_id=1429268915 instance=ExtResource("8_fs0g5")]
+[node name="@Node3D@67" type="Node3D" parent="Decorations" unique_id=72498345 instance=ExtResource("8_fs0g5")]
 transform = Transform3D(0.9653473, 0, 0, 0, 0.9653473, 0, 0, 0, 0.9653473, -2.1729133, 1.3022046, -0.10890348)
 
-[node name="@Node3D@68" type="Node3D" parent="Decorations" unique_id=1031520164 instance=ExtResource("7_r5c7d")]
+[node name="@Node3D@68" type="Node3D" parent="Decorations" unique_id=488661842 instance=ExtResource("7_r5c7d")]
 transform = Transform3D(0.88700515, 0, 0, 0, 0.88700515, 0, 0, 0, 0.88700515, -1.2805216, 1.7462754, 0.62020606)
 
-[node name="OasisPool" type="MeshInstance3D" parent="Decorations" unique_id=706414100]
+[node name="OasisPool" type="MeshInstance3D" parent="Decorations" unique_id=1805373484]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0.03, -1)
 mesh = SubResource("CylinderMesh_f47c0")
 
-[node name="Background" type="Node3D" parent="." unique_id=573424918]
+[node name="Background" type="Node3D" parent="." unique_id=1033862215]
 
-[node name="SandDunes" type="MeshInstance3D" parent="Background" unique_id=1358264634]
+[node name="SandDunes" type="MeshInstance3D" parent="Background" unique_id=817168766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14, 0)
 mesh = SubResource("ArrayMesh_pt82w")
 
-[node name="Butte0" type="MeshInstance3D" parent="Background" unique_id=583064900]
+[node name="Butte0" type="MeshInstance3D" parent="Background" unique_id=1484584661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.42692, 8.393101, 23.641617)
 mesh = SubResource("ArrayMesh_bbjm2")
 
-[node name="Butte1" type="MeshInstance3D" parent="Background" unique_id=773659767]
+[node name="Butte1" type="MeshInstance3D" parent="Background" unique_id=458507286]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.324844, 6.419407, 70.75914)
 mesh = SubResource("ArrayMesh_qgis1")
 
-[node name="Butte2" type="MeshInstance3D" parent="Background" unique_id=36713431]
+[node name="Butte2" type="MeshInstance3D" parent="Background" unique_id=996468068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.641617, 8.905546, 76.42692)
 mesh = SubResource("ArrayMesh_q6qgf")
 
-[node name="Butte3" type="MeshInstance3D" parent="Background" unique_id=988648587]
+[node name="Butte3" type="MeshInstance3D" parent="Background" unique_id=1923334982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.75914, 16.03661, 37.324844)
 mesh = SubResource("ArrayMesh_qxwld")
 
-[node name="Butte4" type="MeshInstance3D" parent="Background" unique_id=6704296]
+[node name="Butte4" type="MeshInstance3D" parent="Background" unique_id=220695380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.42692, 8.750196, -23.641617)
 mesh = SubResource("ArrayMesh_nitox")
 
-[node name="Butte5" type="MeshInstance3D" parent="Background" unique_id=1029081029]
+[node name="Butte5" type="MeshInstance3D" parent="Background" unique_id=1526838559]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.324844, 6.365465, -70.75914)
 mesh = SubResource("ArrayMesh_wh3en")
 
-[node name="Butte6" type="MeshInstance3D" parent="Background" unique_id=1617314159]
+[node name="Butte6" type="MeshInstance3D" parent="Background" unique_id=79035873]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.641617, 2.6894913, -76.42692)
 mesh = SubResource("ArrayMesh_nakq7")
 
-[node name="Butte7" type="MeshInstance3D" parent="Background" unique_id=68179724]
+[node name="Butte7" type="MeshInstance3D" parent="Background" unique_id=1156811467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.75914, 12.783859, -37.324844)
 mesh = SubResource("ArrayMesh_3kn7j")
 
-[node name="CameraRig" type="Node3D" parent="." unique_id=513881986]
+[node name="CameraRig" type="Node3D" parent="." unique_id=537473537]
 script = ExtResource("10_1cxk2")
 animation_name = "Victory"
 
-[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1576054702]
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1236805481]
 transform = Transform3D(1, 0, 0, 0, 0.98861885, 0.150442, 0, -0.150442, 0.98861885, 1.9, 1.75, 4.6)
 fov = 55.0
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=648155901]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1903698546]
 
-[node name="Menu" type="Control" parent="UI" unique_id=2108096944]
+[node name="Menu" type="Control" parent="UI" unique_id=1141511506]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -407,7 +407,7 @@ theme = SubResource("Theme_bh2aj")
 script = ExtResource("12_fihvn")
 is_win_screen = true
 
-[node name="Panel" type="PanelContainer" parent="UI/Menu" unique_id=988463060]
+[node name="Panel" type="PanelContainer" parent="UI/Menu" unique_id=795477992]
 layout_mode = 0
 anchor_left = 1.0
 anchor_top = 0.5
@@ -418,33 +418,33 @@ offset_top = -270.0
 offset_right = -60.0
 offset_bottom = 270.0
 
-[node name="VBox" type="VBoxContainer" parent="UI/Menu/Panel" unique_id=1332601800]
+[node name="VBox" type="VBoxContainer" parent="UI/Menu/Panel" unique_id=1149477317]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Title" type="Label" parent="UI/Menu/Panel/VBox" unique_id=94222722]
+[node name="Title" type="Label" parent="UI/Menu/Panel/VBox" unique_id=61549896]
 layout_mode = 2
 text = "ยินดีด้วย!"
 label_settings = SubResource("LabelSettings_gjr0d")
 horizontal_alignment = 1
 
-[node name="Story" type="Label" parent="UI/Menu/Panel/VBox" unique_id=1508722471]
+[node name="Story" type="Label" parent="UI/Menu/Panel/VBox" unique_id=537288005]
 layout_mode = 2
 text = "แคคโทโร่ได้คริสตัลครบ โอเอซิสกลับมามีน้ำอีกครั้ง"
 label_settings = SubResource("LabelSettings_vv34l")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="TimeLabel" type="Label" parent="UI/Menu/Panel/VBox" unique_id=1552383739]
+[node name="TimeLabel" type="Label" parent="UI/Menu/Panel/VBox" unique_id=2090931980]
 layout_mode = 2
 text = "เวลาที่ใช้: 00:00"
 label_settings = SubResource("LabelSettings_f5dyg")
 horizontal_alignment = 1
 
-[node name="StartButton" type="Button" parent="UI/Menu/Panel/VBox" unique_id=1200183510]
+[node name="StartButton" type="Button" parent="UI/Menu/Panel/VBox" unique_id=61138695]
 layout_mode = 2
 text = "เล่นอีกครั้ง"
 
-[node name="TitleButton" type="Button" parent="UI/Menu/Panel/VBox" unique_id=306951994]
+[node name="TitleButton" type="Button" parent="UI/Menu/Panel/VBox" unique_id=363457605]
 layout_mode = 2
 text = "กลับหน้าแรก"

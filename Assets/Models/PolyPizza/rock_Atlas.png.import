@@ -3,11 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxawff600toh5"
-path.s3tc="res://.godot/imported/rock_Atlas.png-1680030afa7aa3d43bbd6d1ed3c92059.s3tc.ctex"
-path.etc2="res://.godot/imported/rock_Atlas.png-1680030afa7aa3d43bbd6d1ed3c92059.etc2.ctex"
+path="res://.godot/imported/rock_Atlas.png-1680030afa7aa3d43bbd6d1ed3c92059.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "b6b1d5843eb67973aacf764f46d2f25b"
@@ -16,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/PolyPizza/rock_Atlas.png"
-dest_files=["res://.godot/imported/rock_Atlas.png-1680030afa7aa3d43bbd6d1ed3c92059.s3tc.ctex", "res://.godot/imported/rock_Atlas.png-1680030afa7aa3d43bbd6d1ed3c92059.etc2.ctex"]
+dest_files=["res://.godot/imported/rock_Atlas.png-1680030afa7aa3d43bbd6d1ed3c92059.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

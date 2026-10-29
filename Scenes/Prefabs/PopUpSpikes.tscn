@@ -20,21 +20,21 @@ _surfaces = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_4y5f5"]
 size = Vector3(1.6, 0.9, 1.6)
 
-[node name="PopUpSpikes" type="Node3D" unique_id=347321320]
+[node name="PopUpSpikes" type="Node3D" unique_id=747556619]
 script = ExtResource("1_k2oej")
 
-[node name="Hole" type="MeshInstance3D" parent="." unique_id=1544107665]
+[node name="Hole" type="MeshInstance3D" parent="." unique_id=456477424]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0)
 mesh = SubResource("ArrayMesh_6mvfi")
 
-[node name="Spikes" type="Node3D" parent="." unique_id=262903154]
+[node name="Spikes" type="Node3D" parent="." unique_id=2131926661]
 
 [node name="SpikePlatform" type="Node3D" parent="Spikes" unique_id=1516601564 instance=ExtResource("3_ndx58")]
 transform = Transform3D(1.0736947, 0, 0, 0, 1.0225664, 0, 0, 0, 1.0736947, 0, 0, 0)
 
-[node name="Hazard" type="Area3D" parent="Spikes" unique_id=985915816]
+[node name="Hazard" type="Area3D" parent="Spikes" unique_id=83475886]
 script = ExtResource("4_sjvsr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Spikes/Hazard" unique_id=1301343416]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spikes/Hazard" unique_id=513513846]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("BoxShape3D_4y5f5")

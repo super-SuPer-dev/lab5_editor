@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bm1hqybgiajgu"]
+[gd_scene load_steps=14 format=3 uid="uid://bm1hqybgiajgu"]
 
 [ext_resource type="Script" path="res://Scripts/AudioManager.gd" id="1_iwfhn"]
 [ext_resource type="AudioStream" uid="uid://lnq3qyt6mylm" path="res://Assets/Audio/SFX/jump.ogg" id="1_rkf2p"]
@@ -11,6 +11,8 @@
 [ext_resource type="AudioStream" path="res://Assets/Audio/SFX/portal.wav" id="9_portal"]
 [ext_resource type="AudioStream" path="res://Assets/Audio/SFX/win.wav" id="10_win"]
 [ext_resource type="AudioStream" path="res://Assets/Audio/SFX/click.ogg" id="11_click"]
+[ext_resource type="AudioStream" path="res://Assets/Audio/SFX/footstep_a.wav" id="12_stepa"]
+[ext_resource type="AudioStream" path="res://Assets/Audio/SFX/footstep_b.wav" id="13_stepb"]
 
 [node name="AudioManager" type="Node"]
 process_mode = 3
@@ -56,3 +58,11 @@ volume_db = -4.0
 
 [node name="ClickSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_click")
+
+[node name="StepLeftSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_stepa")
+volume_db = -10.0
+
+[node name="StepRightSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_stepb")
+volume_db = -10.0

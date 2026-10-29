@@ -3,11 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cogeckb5irdg5"
-path.s3tc="res://.godot/imported/large_bone_Atlas_Pirate.png-f6fe2240e14b91d140857b1ad8a51838.s3tc.ctex"
-path.etc2="res://.godot/imported/large_bone_Atlas_Pirate.png-f6fe2240e14b91d140857b1ad8a51838.etc2.ctex"
+path="res://.godot/imported/large_bone_Atlas_Pirate.png-f6fe2240e14b91d140857b1ad8a51838.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "219f43be043845c1039f47f20d5b6de4"
@@ -16,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/PolyPizza/large_bone_Atlas_Pirate.png"
-dest_files=["res://.godot/imported/large_bone_Atlas_Pirate.png-f6fe2240e14b91d140857b1ad8a51838.s3tc.ctex", "res://.godot/imported/large_bone_Atlas_Pirate.png-f6fe2240e14b91d140857b1ad8a51838.etc2.ctex"]
+dest_files=["res://.godot/imported/large_bone_Atlas_Pirate.png-f6fe2240e14b91d140857b1ad8a51838.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
